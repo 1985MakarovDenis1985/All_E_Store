@@ -1,5 +1,6 @@
 const path = require("path");
 
+
 module.exports = {
 	mode: "development",
 	entry: "./src/index.js",
@@ -7,7 +8,9 @@ module.exports = {
 		filename: "app.js",
 		path: path.resolve(__dirname, "dist")
 	},
+
 	watch: true,
+
 	devServer: {
 		contentBase: path.join(__dirname, "dist"),
 		compress: true,

@@ -1,7 +1,8 @@
-
 import {IsLogin} from "./isLogin";
-
 import {Show} from "./show";
+
+const isLogin = new IsLogin();
+
 let show = new Show();
 
 const products = [
@@ -181,6 +182,9 @@ const products = [
 
     },
 ];
+
+const storage = localStorage.getItem("isLogin")
+
 
 //PAGINATION & SHOW ONLY 6 ITEMS
 
@@ -544,11 +548,9 @@ function attachChilderToParent(html, array_el) {
 };
 
 
-
 ///////////// LOGIN
-
+////// в упрощенном варианте
 // let log_form = document.getElementById("login_form")
-//
 // function createHtmlElement() {
 //
 //     const labelEmail = createNewElement("label", "Email address", null, [{
@@ -590,27 +592,46 @@ function attachChilderToParent(html, array_el) {
 // function submit() {
 //     console.log("submit");
 //     localStorage.setItem("isLogin", true);
-//
 // }
-//////////
+////////
+// document.getElementById("log_out").style.display = "none"
+
+// let l = document.getElementById("log_out");
+// l.addEventListener("click", (e) => {
+// });
+
+// if (location.hash == "logout"){
+//     localStorage.removeItem("isLogin");
+//     location = location.origin
+// }
+
+
+switch (location.hash) {
+    case "#logout":
+        localStorage.removeItem("isLogin");
+       location = location.origin
+    case "#card":
+        console.log("Card");
+    default:
+        if (storage) {
+            show.showButtonSearch();
+            document.getElementById("title").innerHTML = "Catalog"
+            document.getElementById("log_out").style.display = "block"
+            renderProducts(products);
+        }
+        else {
+            isLogin.createHtmlElement();
+            document.getElementById("title").innerHTML = "login"
+        }
+}
 
 
 
 /////////// IF LOGIN
 
-    if (localStorage.getItem("isLogin")) {
-        show.showButtonSearch();
-        renderProducts(products);
-        console.log("local");
-    }else{
-        const isLogin = new IsLogin();
-        isLogin.createHtmlElement();
-    }
 
-    console.log(localStorage);
-
-
-
+console.log(localStorage);
+console.log(location.hash);
 
 
 

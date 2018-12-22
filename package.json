@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "sync": "browser-sync-webpack-plugin"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
     "@babel/core": "^7.1.5",
     "@babel/preset-env": "^7.1.5",
     "babel-loader": "^8.0.4",
+    "browser-sync-webpack-plugin": "^2.2.2",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"

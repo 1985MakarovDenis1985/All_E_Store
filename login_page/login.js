@@ -36,8 +36,6 @@ const submitHandler = (e)=>{
 
 
 
-    /////////
-
 
     if (! isSubmitDog(submitEmail)){
         errorEmail.push(" You forgot '@' or '.', ");
