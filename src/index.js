@@ -607,7 +607,7 @@ function attachChilderToParent(html, array_el) {
 
 
 switch (location.hash) {
-    case "#logout":
+    case "https://1985makarovdenis1985.github.io/All_E_Store/dist/index.html":
         localStorage.removeItem("isLogin");
        location = location.origin
     case "#card":
