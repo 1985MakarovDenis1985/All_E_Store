@@ -183,7 +183,7 @@ const products = [
     },
 ];
 
-const storage = localStorage.getItem("isLogin")
+const storage = localStorage.getItem("isLogin", "true_el")
 
 
 //PAGINATION & SHOW ONLY 6 ITEMS
@@ -607,9 +607,9 @@ function attachChilderToParent(html, array_el) {
 
 
 switch (location.hash) {
-    case "https://1985makarovdenis1985.github.io/All_E_Store/dist/index.html":
+    case "#logout":
         localStorage.removeItem("isLogin");
-       location = location.origin
+        location = location.origin;
     case "#card":
         console.log("Card");
     default:
